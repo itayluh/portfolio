@@ -7,8 +7,8 @@
 
 :root {
     --color-primary: #09071f;
-    --color-secondary: #0a4d07;
-    --color-secondary-dark: rgb(41, 61, 42);
+    --color-secondary: #8d3c06;
+    --color-secondary-dark: #421e06;
     --color-white: #FFFFFF;
     --color-black: #000;
     --color-grey-1: #8a8a8a;
@@ -49,37 +49,18 @@ section {
 }
 
 .section {
-    transform: translateY(-100%);
+    display: none;
+    transform: translateY(0) scale(1);
     transition: var(--transition-fade);
     background-color: var(--color-primary);
 }
 
-.sec1 {
-    display: none;
-    transform: translateY(0) scale(1);
-}
-
-.sec2 {
-    display: none;
-    transform: translateY(0) scale(1);
-}
-
-.sec3 {
-    display: none;
-    transform: translateY(0) scale(1);
-}
-
-.sec4 {
-    display: none;
-    transform: translateY(0) scale(1);
-}
-
 .active {
     display: block;
-    animation: scalAnim 1s ease-in-out;
+    animation: scaleAnim .4s ease-in-out;
     @keyframes scaleAnim {
         0% {
-            transform: translateY(-100%) scaleY(0);
+            transform: translateY(-70%) scaleY(0);
         }
         100% {
             transform: translateY(0) scaleY(1);
@@ -244,18 +225,28 @@ section {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    margin: 0 1rem;
+                    margin: 0 .5rem;
                     cursor: pointer;
                     transition: var(--transition-fade);
                     i {
                         font-size: 1.5rem;
                         color: var(--color-white);
-                        margin: 0 1rem;
+                        margin: 0 .5rem;
                     }
                     &:hover {
+                        transition: var(--transition-fade);
                         background-color: var(--color-white);
                         i {
+                            transition: var(--transition-fade);
                             color: var(--color-primary);
+                        }
+                    }
+                    &:not(:hover) {
+                        transition: var(--transition-fade);
+                        background-color: var(--color-primary);
+                        i {
+                            transition: var(--transition-fade);
+                            color: var(--color-white);
                         }
                     }
                 }
@@ -376,9 +367,119 @@ section {
             font-size: 1.3rem;
             font-weight: 600;
             span {
+                color: var(--color-secondary-dark);
                 font-weight: 500;
                 font-size: 1.2rem;
             }
+        }
+    }
+}
+
+// Contact Section
+.contact-content {
+    display: flex;
+    padding-top: 3.5rem;
+    // the left section of the contact page
+    .left-contact {
+        flex: 2;
+        h4 {
+            margin-top: 1rem;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+        p {
+            margin: 1rem 0;
+            line-height: 2rem;
+        }
+        .contact-info {
+            .contact-item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                p {
+                    margin: .3rem 0 !important;
+                    padding: 0 !important;
+                }
+                .icon {
+                    display: grid;
+                    grid-template-columns: 40px 1fr;
+                    i {
+                        display: flex;
+                        align-items: center;
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
+        .contact-icon {
+            display: flex;
+            margin-top: 2rem;
+            a {
+                display: flex;
+                align-items: center;
+                color: var(--color-white);
+                background-color: var(--color-grey-5);
+                cursor: pointer;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin: 0 .4rem;
+                transition: all .4s ease-in-out;
+                i {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 2rem;
+                }
+                &:hover {
+                    transition: var(--transition-fade);
+                    background-color: var(--color-secondary);
+                    i {
+                        transition: var(--transition-fade);
+                        color: var(--color-primary);
+                    }
+                }
+                &:not(:hover) {
+                    transition: var(--transition-fade);
+                    background-color: var(--color-primary);
+                    i {
+                        transition: var(--transition-fade);
+                        color: var(--color-white);
+                    }
+                }
+            }
+        }
+    }
+    // the right section of the contact page
+    .right-contact {
+        flex: 3;
+        margin-left: 3rem;
+        .input-control {
+            margin: 1.5rem 0;
+            input, textarea {
+                border-radius: 30px;
+                font-weight: inherit;
+                font-size: inherit;
+                font-family: inherit;
+                padding: .8rem 1.1rem;
+                outline: none;
+                border: none;
+                background-color: var(--color-grey-2);
+                width: 100%;
+                color: var(--color-white);
+                resize: none;
+            }
+        }
+        .input-control-add {
+            display: flex;
+            :last-child {
+                margin-left: 1.5rem;
+            }
+        }
+        .submit-btn {
+            display: flex;
+            justify-content: flex-start;
         }
     }
 }
@@ -479,7 +580,7 @@ section {
         top: 0;
         width: 40%;
         height: 1px;
-        background-color: var(--color-grey-5);
+        background-color: var(--color-grey-2);
         transform: translateX(-50%);
     }
 }

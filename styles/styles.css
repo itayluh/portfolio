@@ -8,8 +8,8 @@
 
 :root {
   --color-primary: #09071f;
-  --color-secondary: #0a4d07;
-  --color-secondary-dark: rgb(41, 61, 42);
+  --color-secondary: #8d3c06;
+  --color-secondary-dark: #421e06;
   --color-white: #FFFFFF;
   --color-black: #000;
   --color-grey-1: #8a8a8a;
@@ -51,47 +51,24 @@ section {
 }
 
 .section {
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
+  display: none;
+  -webkit-transform: translateY(0) scale(1);
+          transform: translateY(0) scale(1);
   -webkit-transition: var(--transition-fade);
   transition: var(--transition-fade);
   background-color: var(--color-primary);
 }
 
-.sec1 {
-  display: none;
-  -webkit-transform: translateY(0) scale(1);
-          transform: translateY(0) scale(1);
-}
-
-.sec2 {
-  display: none;
-  -webkit-transform: translateY(0) scale(1);
-          transform: translateY(0) scale(1);
-}
-
-.sec3 {
-  display: none;
-  -webkit-transform: translateY(0) scale(1);
-          transform: translateY(0) scale(1);
-}
-
-.sec4 {
-  display: none;
-  -webkit-transform: translateY(0) scale(1);
-          transform: translateY(0) scale(1);
-}
-
 .active {
   display: block;
-  -webkit-animation: scalAnim 1s ease-in-out;
-          animation: scalAnim 1s ease-in-out;
+  -webkit-animation: scaleAnim .4s ease-in-out;
+          animation: scaleAnim .4s ease-in-out;
 }
 
 @-webkit-keyframes scaleAnim {
   0% {
-    -webkit-transform: translateY(-100%) scaleY(0);
-            transform: translateY(-100%) scaleY(0);
+    -webkit-transform: translateY(-70%) scaleY(0);
+            transform: translateY(-70%) scaleY(0);
   }
   100% {
     -webkit-transform: translateY(0) scaleY(1);
@@ -101,8 +78,8 @@ section {
 
 @keyframes scaleAnim {
   0% {
-    -webkit-transform: translateY(-100%) scaleY(0);
-            transform: translateY(-100%) scaleY(0);
+    -webkit-transform: translateY(-70%) scaleY(0);
+            transform: translateY(-70%) scaleY(0);
   }
   100% {
     -webkit-transform: translateY(0) scaleY(1);
@@ -354,7 +331,7 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 1rem;
+  margin: 0 .5rem;
   cursor: pointer;
   -webkit-transition: var(--transition-fade);
   transition: var(--transition-fade);
@@ -363,15 +340,31 @@ section {
 .portfolios .portfolio-item .hover-items .icons .icon i {
   font-size: 1.5rem;
   color: var(--color-white);
-  margin: 0 1rem;
+  margin: 0 .5rem;
 }
 
 .portfolios .portfolio-item .hover-items .icons .icon:hover {
+  -webkit-transition: var(--transition-fade);
+  transition: var(--transition-fade);
   background-color: var(--color-white);
 }
 
 .portfolios .portfolio-item .hover-items .icons .icon:hover i {
+  -webkit-transition: var(--transition-fade);
+  transition: var(--transition-fade);
   color: var(--color-primary);
+}
+
+.portfolios .portfolio-item .hover-items .icons .icon:not(:hover) {
+  -webkit-transition: var(--transition-fade);
+  transition: var(--transition-fade);
+  background-color: var(--color-primary);
+}
+
+.portfolios .portfolio-item .hover-items .icons .icon:not(:hover) i {
+  -webkit-transition: var(--transition-fade);
+  transition: var(--transition-fade);
+  color: var(--color-white);
 }
 
 .portfolio-item:hover .hover-items {
@@ -524,8 +517,176 @@ section {
 }
 
 .timeline .timeline-item h5 span {
+  color: var(--color-secondary-dark);
   font-weight: 500;
   font-size: 1.2rem;
+}
+
+.contact-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 3.5rem;
+}
+
+.contact-content .left-contact {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.contact-content .left-contact h4 {
+  margin-top: 1rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.contact-content .left-contact p {
+  margin: 1rem 0;
+  line-height: 2rem;
+}
+
+.contact-content .left-contact .contact-info .contact-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contact-content .left-contact .contact-info .contact-item p {
+  margin: .3rem 0 !important;
+  padding: 0 !important;
+}
+
+.contact-content .left-contact .contact-info .contact-item .icon {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40px 1fr;
+      grid-template-columns: 40px 1fr;
+}
+
+.contact-content .left-contact .contact-info .contact-item .icon i {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.3rem;
+}
+
+.contact-content .left-contact .contact-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 2rem;
+}
+
+.contact-content .left-contact .contact-icon a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--color-white);
+  background-color: var(--color-grey-5);
+  cursor: pointer;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 .4rem;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.contact-content .left-contact .contact-icon a i {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 2rem;
+}
+
+.contact-content .left-contact .contact-icon a:hover {
+  -webkit-transition: var(--transition-fade);
+  transition: var(--transition-fade);
+  background-color: var(--color-secondary);
+}
+
+.contact-content .left-contact .contact-icon a:hover i {
+  -webkit-transition: var(--transition-fade);
+  transition: var(--transition-fade);
+  color: var(--color-primary);
+}
+
+.contact-content .left-contact .contact-icon a:not(:hover) {
+  -webkit-transition: var(--transition-fade);
+  transition: var(--transition-fade);
+  background-color: var(--color-primary);
+}
+
+.contact-content .left-contact .contact-icon a:not(:hover) i {
+  -webkit-transition: var(--transition-fade);
+  transition: var(--transition-fade);
+  color: var(--color-white);
+}
+
+.contact-content .right-contact {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  margin-left: 3rem;
+}
+
+.contact-content .right-contact .input-control {
+  margin: 1.5rem 0;
+}
+
+.contact-content .right-contact .input-control input, .contact-content .right-contact .input-control textarea {
+  border-radius: 30px;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  padding: .8rem 1.1rem;
+  outline: none;
+  border: none;
+  background-color: var(--color-grey-2);
+  width: 100%;
+  color: var(--color-white);
+  resize: none;
+}
+
+.contact-content .right-contact .input-control-add {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact-content .right-contact .input-control-add :last-child {
+  margin-left: 1.5rem;
+}
+
+.contact-content .right-contact .submit-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .btn-con {
@@ -656,7 +817,7 @@ section {
   top: 0;
   width: 40%;
   height: 1px;
-  background-color: var(--color-grey-5);
+  background-color: var(--color-grey-2);
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
