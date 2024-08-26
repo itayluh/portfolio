@@ -10,31 +10,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-    <span class="iconify" data-icon="simple-icons:leetcode"></span>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body class="main-content">
     <main>
-        <header class="section home active" id ="home">
-            <div class="header-content">
-                <div class="left-header">
-                    <div class="h-shape"></div>
-                    <div class="image"><img src="img/main.png" alt=""></div>
-                </div>
-                <div class="right-header">
-                    <h1 class="name">Hello, I'm <span>Taylor!</span></h1>
-                    <p>
-                        My name is <span>Taylor Dicks.</span></br>
-                        I am a software engineer. </br>
-                        Learning is one of my passions. </br>
-                        Please have a look around!
-                    </p>
-                    <a href="#" class="main-btn">
-                        <span class="btn-text">Resumé</span>
-                        <span class="btn-icon"><i class="fas fa-square-poll-horizontal"></i></span>
-                    </a>
-                </div>
-            </div>
-        </header>
+        <!-- <header id="home"><header></header> -->
+        <Home id="home"></Home>
         <section class="section portfolio" id="portfolio">
             <div class="main-title">
                 <h2>My <span>Portfolio</span></h2>
@@ -62,7 +45,7 @@
         </section>
         <section class="section about" id="about">
             <div class="main-title">
-                <h2>About <span>me</span><span class="bg-text">my stats</span></h2>
+                <h2>About <span>me</span></h2>
             </div>
             <div class="about-container">
                 <div class="left-about">
