@@ -12,7 +12,7 @@
   --color-secondary-dark: #421e06;
   --color-white: #FFFFFF;
   --color-black: #000;
-  --color-grey-1: #8a8a8a;
+  --color-grey-1: #c6c6c6;
   --color-grey-2: #616161;
   --box-shadow-1: 0 3px 15px rgba(0,0,0,0.3);
   --br-sm-2: 14px;
@@ -23,7 +23,7 @@ body {
   background-color: var(--color-primary);
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
-  color: var(--color-grey-2);
+  color: var(--color-grey-1);
   -webkit-transition: var(--transition-fade);
   transition: var(--transition-fade);
 }
@@ -154,7 +154,7 @@ section {
 .header-content {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
+  -ms-grid-columns: (1fr);
       grid-template-columns: repeat(2, 1fr);
   height: 100%;
 }
@@ -217,7 +217,7 @@ section {
 }
 
 .header-content .right-header {
-  color: var(--color-grey-2);
+  color: var(--color-grey-1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -252,7 +252,7 @@ section {
 .portfolios {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
+  -ms-grid-columns: (1fr);
       grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
   margin-top: 3rem;
@@ -376,7 +376,7 @@ section {
 .about-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
+  -ms-grid-columns: (1fr);
       grid-template-columns: repeat(2, 1fr);
   padding-top: 3.5rem;
   padding-bottom: 5rem;
@@ -385,7 +385,7 @@ section {
 .about-container .right-about {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
+  -ms-grid-columns: (1fr);
       grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
 }
@@ -461,7 +461,7 @@ section {
 .timeline {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
+  -ms-grid-columns: (1fr);
       grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
   padding-bottom: 3rem;
