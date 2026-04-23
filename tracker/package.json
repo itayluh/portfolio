@@ -1,0 +1,20 @@
+{
+  "name": "tracker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:server": "node --watch server/index.mjs",
+    "dev:web": "npm --prefix web run dev",
+    "dev": "concurrently -n server,web -c blue,magenta \"npm:dev:server\" \"npm:dev:web\"",
+    "build": "npm --prefix web install && npm --prefix web run build",
+    "start": "NODE_ENV=production node server/index.mjs"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
